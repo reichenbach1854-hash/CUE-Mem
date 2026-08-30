@@ -1,0 +1,70 @@
+# Runtime secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Generated media, reports, logs, and galleries
+profile/generated_portraits/
+profile/voice_style/
+event/images/
+event/background_audio/
+event/voice_message*/
+event/voice_mixed*/
+event/*.log
+event/*.csv
+event/*inspection.html
+event/*inspection*.html
+profile/*gallery*.html
+profile/regen_list.txt
+
+# QA generated data, media, checkpoints, and HTML reports
+qa/entity_images/
+qa/pref_images/
+qa/rec_images/
+qa/qwen3.5-9b/
+qa/qwen3_asr_1.7b/
+qa/qwen_audio/
+qa/qwen2_audio_7b/
+qa/moss_audio_8b/
+qa/rechecked_memory_clues/
+qa/*.json
+qa/*.jsonl
+qa/*.csv
+qa/*.html
+qa/*.log
+qa/*.tmp
+
+# Local model/checkpoint material
+*.pth
+*.pt
+*.ckpt
+
+# RQ1/RQ2 external data, generated results, caches, logs, and reports
+**/RQ1_RQ2/benchmark/data/
+**/RQ1_RQ2/benchmark/result*/
+**/RQ1_RQ2/benchmark/.cache/
+**/RQ1_RQ2/benchmark/.memory_cache/
+**/RQ1_RQ2/benchmark/logs/
+**/RQ1_RQ2/benchmark/run/*.json
+**/RQ1_RQ2/benchmark/run/*.jsonl
+**/RQ1_RQ2/benchmark/run/*.csv
+**/RQ1_RQ2/benchmark/run/*.html
+**/RQ1_RQ2/benchmark/run/*.log
+
+# RQ3 external data, embeddings, prompts, results, and caches
+**/RQ3/data/
+**/RQ3/embeddings/
+**/RQ3/prompts/
+**/RQ3/results*/
+**/RQ3/cache/
+**/RQ3/logs/
+
+# Human baseline submissions
+**/human_baseline_demo/results/
+**/human_baseline_demo/*.log

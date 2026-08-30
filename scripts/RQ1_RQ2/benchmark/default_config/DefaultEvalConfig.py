@@ -1,0 +1,17 @@
+import os
+
+from default_config.DefaultGlobalConfig import *
+
+# ----- LLM Judge Configuration -----
+DEFAULT_LLM_JUDGE_CONFIG = {
+    'method': 'APILLM',
+    'name': os.environ.get('CUE_MEM_LLM_JUDGE_MODEL', os.environ.get('CUE_MEM_LLM_MODEL', '')),
+    'api_key': DEFAULT_OPENAI_APIKEY,
+    'base_url': DEFAULT_OPENAI_APIBASE,
+    'temperature': 0,  # Use 0 for deterministic judgments
+    'max_retries': 5,  # Maximum number of retries for API calls
+    'timeout': 60,  # Timeout in seconds for API calls
+}
+
+# Prompt template path (relative to evaluate directory)
+DEFAULT_LLM_JUDGE_PROMPT_PATH = 'llm_judge.txt'

@@ -1,0 +1,11 @@
+# Core script dependencies
+requests>=2.31
+tqdm>=4.66
+openai>=1.0
+json-repair>=0.30
+PyJWT>=2.8
+
+# Optional media/TTS dependencies
+pydub>=0.25
+soundfile>=0.12
+# tos, torch, and qwen-tts are needed only for their corresponding workflows.
