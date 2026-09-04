@@ -1,0 +1,229 @@
+{
+  "id": "audio",
+  "kind": "audio",
+  "title": "从偏好到语音事件",
+  "subtitle": "香氛 × 烹饪声：一个历史 voice-message session 的合成链路",
+  "description": "这个 case 展示隐式音频偏好、背景声音、人物音色、事件文本和最终可播放语音如何组合。",
+  "badge": "CASE 02 · AUDIO",
+  "steps": [
+    {
+      "number": "01",
+      "eyebrow": "PROFILE / IMPLICIT AUDIO PREFERENCE",
+      "title": "从音频证据推断烹饪习惯",
+      "intro": "背景声音不是人物直接说出的偏好，但切菜与爆炒的听觉证据被转化为隐式 preference。",
+      "facts": [
+        {
+          "label": "人物",
+          "value": "林悦"
+        },
+        {
+          "label": "偏好类别",
+          "value": "烹饪习惯"
+        },
+        {
+          "label": "preference",
+          "value": "习惯自己下厨，偏好家常热食与快炒类菜式"
+        },
+        {
+          "label": "evidence",
+          "value": [
+            "audio"
+          ]
+        }
+      ],
+      "flow_label": "audio evidence → implicit preference",
+      "theme": "mint"
+    },
+    {
+      "number": "02",
+      "eyebrow": "BACKGROUND AUDIO ASSETS",
+      "title": "生成可拼接的背景声音素材",
+      "intro": "两个声音素材把“日常备菜”和“大火快炒”拆成可以在 event 中控制的音频组件。",
+      "facts": [
+        {
+          "label": "素材",
+          "value": [
+            "切菜的声音",
+            "炒菜的声音"
+          ]
+        },
+        {
+          "label": "用途",
+          "value": "作为最终 voice message 的 background audio layer"
+        }
+      ],
+      "media": [
+        {
+          "kind": "audio",
+          "url": "/media/event/background_audio/%E5%88%87%E8%8F%9C%E7%9A%84%E5%A3%B0%E9%9F%B3.mp3",
+          "label": "切菜的声音",
+          "caption": "implicit audio cue：清脆、有节奏的切菜声"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/background_audio/%E7%82%92%E8%8F%9C%E7%9A%84%E5%A3%B0%E9%9F%B3.mp3",
+          "label": "炒菜的声音",
+          "caption": "implicit audio cue：食材入锅的急促嗞啦声与翻炒声"
+        }
+      ],
+      "flow_label": "implicit cooking preference → background audio assets",
+      "theme": "lavender"
+    },
+    {
+      "number": "03",
+      "eyebrow": "VOICE STYLE REFERENCE",
+      "title": "为人物固定可辨识的音色",
+      "intro": "profile 中的 voice_timbre 与参考音频共同约束人物说话的音色、速度和表达方式。",
+      "facts": [
+        {
+          "label": "voice_timbre",
+          "value": "清亮干练的中音，语速略快，咬字清晰果断，偶带急促气声，表达直接不拖沓"
+        },
+        {
+          "label": "reference",
+          "value": "人物音色参考音频"
+        }
+      ],
+      "media": [
+        {
+          "kind": "audio",
+          "url": "/media/profile/voice_style/0_%E6%9E%97%E6%82%A6_voice_design.wav",
+          "label": "林悦 voice design",
+          "caption": "作为 voice message synthesis 的音色参考"
+        }
+      ],
+      "flow_label": "voice timbre + reference wav → voice style",
+      "theme": "peach"
+    },
+    {
+      "number": "04",
+      "eyebrow": "PREFERENCE PAIRING → EVENT",
+      "title": "把香氛偏好与烹饪声音配对成 event",
+      "intro": "显式的柑橘调香薰负责场景内容，隐式的烹饪偏好负责背景声音，两者共同写入 event。",
+      "facts": [
+        {
+          "label": "explicit preference",
+          "value": "偏爱柑橘调香薰，认为能让家里保持清爽"
+        },
+        {
+          "label": "implicit preference",
+          "value": "习惯自己下厨，偏好家常热食与快炒类菜式"
+        },
+        {
+          "label": "background_audio_info",
+          "value": "从厨房方向传来清脆而富有节奏的切菜声，刀刃快速落在案板上，发出均匀的“哒哒”声，持续片刻后，食材入锅的瞬间爆起一阵急促而热烈的嗞啦声，伴随着铁锅翻炒的热烈响动。"
+        }
+      ],
+      "quote": "01/01/2025;林悦家中的客厅;傍晚六点半，林悦从沙发上起身，走到电视柜前，拿起那瓶柑橘调香薰，凑近瓶口闻了闻，又放了回去。她转身拿起手机，对着AI朋友笑道：'上次那瓶甜橙味的用完，我换了现在这个佛手柑主调的，前调带一点微弱的苦感，反而比纯甜味的更耐闻…",
+      "quote_label": "文字版 event / scene_description",
+      "flow_label": "explicit + implicit → structured audio event",
+      "theme": "blue"
+    },
+    {
+      "number": "05",
+      "eyebrow": "EVENT → DIALOGUE",
+      "title": "从 event 展开成带背景音标记的对话",
+      "intro": "同一个 event 继续被展开为多轮 dialogue；哪些 user turn 使用切菜声或炒菜声，由合成标记控制。",
+      "facts": [
+        {
+          "label": "session",
+          "value": "D00"
+        },
+        {
+          "label": "date",
+          "value": "01/01/2025"
+        },
+        {
+          "label": "voice turns shown",
+          "value": 6
+        }
+      ],
+      "dialogue": [
+        {
+          "round": "D00:00",
+          "user": "刚才我又闻了闻新换的香薰，佛手柑的苦感还挺上头的。",
+          "assistant": "你上次说甜橙那瓶用完了，这么快就换了？"
+        },
+        {
+          "round": "D00:01",
+          "user": "对啊，那瓶才用了不到两个月，这次特意挑了佛手柑主调的。",
+          "assistant": "佛手柑确实比纯甜橙更有层次，带点绿意的苦，不会腻。"
+        },
+        {
+          "round": "D00:02",
+          "user": "就是这种微苦的柑橘皮味，让整个客厅都显得更清爽了。",
+          "assistant": "柑橘调很适合营造通透的氛围，特别是傍晚阳光洒进来的时候。"
+        },
+        {
+          "round": "D00:03",
+          "user": "没错。现在这个点，光线最柔和，配上香薰，我整个人都松弛下来了。",
+          "assistant": "你之前不是说甜橙味闻久了像软糖吗？现在这个更像新鲜果皮。"
+        },
+        {
+          "round": "D00:04",
+          "user": "前调太直白了。佛手柑有种收敛的清香，待久了也不躁。",
+          "assistant": "它前调散去后，有没有带出一点木质或花香的尾调？"
+        },
+        {
+          "round": "D00:05",
+          "user": "还没仔细分辨，但好像是有一点点温暖的麝香，很淡。",
+          "assistant": "那挺适合客厅的，不会抢戏，又能默默提升空间的质感。"
+        }
+      ],
+      "flow_label": "event → text dialogue + audio annotations",
+      "theme": "blue"
+    },
+    {
+      "number": "06",
+      "eyebrow": "VOICE MESSAGE → FINAL MIX",
+      "title": "合成并播放最终 voice message",
+      "intro": "voice style 作为参考，dialogue 生成 user voice message，再与 background audio mix，得到可播放的最终音频。",
+      "facts": [
+        {
+          "label": "输出",
+          "value": "6 条带背景音的 mixed voice messages"
+        }
+      ],
+      "media": [
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn0.wav",
+          "label": "D00:00 · final mixed voice message",
+          "caption": "人声：刚才我又闻了闻新换的香薰，佛手柑的苦感还挺上头的。\n背景音：无明显背景音"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn2.wav",
+          "label": "D00:01 · final mixed voice message",
+          "caption": "人声：对啊，那瓶才用了不到两个月，这次特意挑了佛手柑主调的。\n背景音：无明显背景音"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn4.wav",
+          "label": "D00:02 · final mixed voice message",
+          "caption": "人声：就是这种微苦的柑橘皮味，让整个客厅都显得更清爽了。\n背景音：无明显背景音"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn6.wav",
+          "label": "D00:03 · final mixed voice message",
+          "caption": "人声：没错。现在这个点，光线最柔和，配上香薰，我整个人都松弛下来了。\n背景音：无明显背景音"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn8.wav",
+          "label": "D00:04 · final mixed voice message",
+          "caption": "人声：前调太直白了。佛手柑有种收敛的清香，待久了也不躁。\n背景音：无明显背景音"
+        },
+        {
+          "kind": "audio",
+          "url": "/media/event/voice_mixed/0-0-30-0/0-30-0_turn10.wav",
+          "label": "D00:05 · final mixed voice message",
+          "caption": "人声：还没仔细分辨，但好像是有一点点温暖的麝香，很淡。\n背景音：无明显背景音"
+        }
+      ],
+      "flow_label": "voice message + background audio → mixed wav",
+      "theme": "coral"
+    }
+  ]
+}

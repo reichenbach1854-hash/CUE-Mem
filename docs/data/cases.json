@@ -1,0 +1,20 @@
+[
+  {
+    "id": "image",
+    "kind": "image",
+    "title": "从偏好到视觉事件",
+    "subtitle": "Pixel × 窗台多肉：一个历史图片 turn 的合成链路",
+    "description": "这个 case 展示隐式视觉偏好、显式宠物实体、事件文本和最终历史图像如何逐步汇合。",
+    "badge": "CASE 01 · IMAGE",
+    "step_count": 5
+  },
+  {
+    "id": "audio",
+    "kind": "audio",
+    "title": "从偏好到语音事件",
+    "subtitle": "香氛 × 烹饪声：一个历史 voice-message session 的合成链路",
+    "description": "这个 case 展示隐式音频偏好、背景声音、人物音色、事件文本和最终可播放语音如何组合。",
+    "badge": "CASE 02 · AUDIO",
+    "step_count": 6
+  }
+]

@@ -1,0 +1,435 @@
+[
+  {
+    "id": "0-FoodAndDrink-1",
+    "title": "Long Pattern",
+    "description": "通过跨 session 的音频线索判断用户的日常烹饪模式。",
+    "category": "FoodAndDrink",
+    "subcategory": "烹饪习惯",
+    "qa_type": "implicit",
+    "question": "以下哪张图最符合该用户的日常烹饪习惯？",
+    "options": {},
+    "option_images": [
+      {
+        "option": "A",
+        "media": {
+          "kind": "image",
+          "url": "/media/qa/pref_images/0-FoodAndDrink-1_A.png",
+          "label": "Option A",
+          "caption": "厨房台面上的慢炖锅里炖着汤 旁边砧板上放着切好的胡萝卜洋葱和芹菜 一只手拿着木勺 窗边摆着罗勒盆栽"
+        }
+      },
+      {
+        "option": "B",
+        "media": {
+          "kind": "image",
+          "url": "/media/qa/pref_images/0-FoodAndDrink-1_B.png",
+          "label": "Option B",
+          "caption": "厨房里打开的微波炉前一只手拿着装有通心粉的外卖塑料盒 台面上有纸袋 酱料杯 筷子和燃气灶"
+        }
+      },
+      {
+        "option": "C",
+        "media": {
+          "kind": "image",
+          "url": "/media/qa/pref_images/0-FoodAndDrink-1_C.png",
+          "label": "Option C",
+          "caption": "厨房里炉火上的炒锅正翻炒青菜，蒸汽升腾，案板上放着葱姜和刀具，旁边有人拿着手机"
+        }
+      },
+      {
+        "option": "D",
+        "media": {
+          "kind": "image",
+          "url": "/media/qa/pref_images/0-FoodAndDrink-1_D.png",
+          "label": "Option D",
+          "caption": "明亮的厨房里摆着厨师机 面团碗和一盘准备烘烤的巧克力豆饼干球"
+        }
+      }
+    ],
+    "clue_media": [
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-27-0/0-27-0_turn0.wav",
+        "label": "D09 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-27-0/0-27-0_turn2.wav",
+        "label": "D09 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-31-0/0-31-0_turn0.wav",
+        "label": "D34 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-31-0/0-31-0_turn2.wav",
+        "label": "D34 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-31-0/0-31-0_turn4.wav",
+        "label": "D34 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn0.wav",
+        "label": "D23 · audio clue · turn0",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn10.wav",
+        "label": "D23 · audio clue · turn10",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn2.wav",
+        "label": "D23 · audio clue · turn2",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn4.wav",
+        "label": "D23 · audio clue · turn4",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn6.wav",
+        "label": "D23 · audio clue · turn6",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-23-0/0-23-0_turn8.wav",
+        "label": "D23 · audio clue · turn8",
+        "caption": ""
+      }
+    ],
+    "answer": "C",
+    "preference": "习惯自己下厨，偏好家常热食与快炒类菜式",
+    "answer_note": "",
+    "adversarial_type": "",
+    "adversarial_type_label": "",
+    "adversarial_subtypes": [],
+    "trap_reason": "",
+    "adversarial_answer": ""
+  },
+  {
+    "id": "0-Items-1-2",
+    "title": "Entity Recall",
+    "description": "根据多段历史视觉记忆回忆实体的使用方式。",
+    "category": "Items",
+    "subcategory": "植物与绿植",
+    "qa_type": "implicit",
+    "question": "用户常用收纳托盘主要是用来做什么？",
+    "options": {
+      "A": "收纳多肉植物",
+      "B": "整理书桌文具",
+      "C": "盛放咖啡杯具",
+      "D": "分类化妆用品"
+    },
+    "option_images": [],
+    "clue_media": [
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-0-0.png",
+        "label": "D02 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-16-0.png",
+        "label": "D08 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-8-0.png",
+        "label": "D20 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-4-0.png",
+        "label": "D24 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-12-0.png",
+        "label": "D31 · visual clue",
+        "caption": ""
+      }
+    ],
+    "answer": "A",
+    "preference": "喜欢在窗台种植多肉等小型绿植",
+    "answer_note": "",
+    "adversarial_type": "",
+    "adversarial_type_label": "",
+    "adversarial_subtypes": [],
+    "trap_reason": "",
+    "adversarial_answer": ""
+  },
+  {
+    "id": "0-HomeAndSpace-1",
+    "title": "Personalized Recommendation",
+    "description": "根据用户的生活偏好选择最匹配的产品推荐。",
+    "category": "HomeAndSpace",
+    "subcategory": "整洁与收纳",
+    "qa_type": "implicit",
+    "question": "如果要向这位用户推荐一款新型家居电器，以下哪项最可能满足其需求？",
+    "options": {
+      "A": "扫拖一体机器人",
+      "B": "衣物除皱挂烫机",
+      "C": "智能洗碗机",
+      "D": "高温蒸汽拖把"
+    },
+    "option_images": [],
+    "clue_media": [
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-33-0/0-33-0_turn0.wav",
+        "label": "D05 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-33-0/0-33-0_turn2.wav",
+        "label": "D05 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn0.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn2.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn4.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn6.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn8.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn10.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn12.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-35-0/0-35-0_turn14.wav",
+        "label": "D14 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn0.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn2.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn4.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn6.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn8.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn10.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn12.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-22-0/0-22-0_turn14.wav",
+        "label": "D27 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn0.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn2.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn4.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn6.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn8.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      },
+      {
+        "kind": "audio",
+        "url": "/media/event/voice_mixed/0-0-34-0/0-34-0_turn10.wav",
+        "label": "D35 · audio clue",
+        "caption": ""
+      }
+    ],
+    "answer": "A",
+    "preference": "养猫且对居家清洁有较高要求，日常频繁使用吸尘器",
+    "answer_note": "",
+    "adversarial_type": "",
+    "adversarial_type_label": "",
+    "adversarial_subtypes": [],
+    "trap_reason": "",
+    "adversarial_answer": ""
+  },
+  {
+    "id": "0-BodyAndHealth-1-adv2",
+    "title": "Answer Refusal",
+    "description": "识别由视觉线索过度推断造成的不可支持陈述。",
+    "category": "BodyAndHealth",
+    "subcategory": "运动方式",
+    "qa_type": "implicit",
+    "question": "林悦为什么说自己每天都会在家练习瑜伽？",
+    "options": {
+      "A": "为了保持身体柔韧与放松",
+      "B": "历史中没有说明",
+      "C": "为了缓解登山后的肌肉酸痛",
+      "D": "为了模仿猫的伸展动作"
+    },
+    "option_images": [],
+    "clue_media": [
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-9-0.png",
+        "label": "D01 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-1-0.png",
+        "label": "D10 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-17-0.png",
+        "label": "D18 · visual clue",
+        "caption": ""
+      },
+      {
+        "kind": "image",
+        "url": "/media/event/images/pid_0000_task_0-5-0.png",
+        "label": "D29 · visual clue",
+        "caption": ""
+      }
+    ],
+    "answer": "B",
+    "preference": "在家偶尔练习瑜伽，注重柔韧与放松",
+    "answer_note": "历史中没有她这样说过；瑜伽习惯仅能从垫子和瑜伽砖的视觉痕迹推断，没有任何关于频率或原因的直接说明。",
+    "adversarial_type": "implicit_overclaim",
+    "adversarial_type_label": "隐式过度推断",
+    "adversarial_subtypes": [
+      [
+        "person_owner_swap",
+        "人物归属置换"
+      ],
+      [
+        "attribute_slot_swap",
+        "属性槽位置换"
+      ],
+      [
+        "category_type_swap",
+        "类别/类型置换"
+      ],
+      [
+        "lexical_concept_swap",
+        "词汇概念置换"
+      ],
+      [
+        "polarity_flip",
+        "极性翻转"
+      ],
+      [
+        "false_presupposition",
+        "虚假预设"
+      ],
+      [
+        "event_context_swap",
+        "事件语境置换"
+      ],
+      [
+        "implicit_overclaim",
+        "隐式过度推断"
+      ]
+    ],
+    "trap_reason": "题干将仅从视觉线索（瑜伽垫、瑜伽砖）推断出的居家瑜伽习惯，夸大为她明确说明过“每天练习”并给出原因。历史中她从未声称每天练习，也未解释过做瑜伽的动机。adversarial_answer以“保持身体柔韧与放松”适配题干问法，保留了真实偏好中“柔韧与放松”的核心语义，容易让模型匹配到记忆中相关但不足以支撑该回答的信息。",
+    "adversarial_answer": "为了保持身体柔韧与放松"
+  }
+]

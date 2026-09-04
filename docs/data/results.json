@@ -1,0 +1,469 @@
+{
+  "rq1": {
+    "title": "Textualized memory systems",
+    "question": "How well do textualized memory systems handle implicit multimodal cues?",
+    "headline": "Implicit memory remains substantially harder than explicit memory.",
+    "callout": "Best implicit Memory Avg.: 41.9 (GPT-5.4-mini / Reflexion), versus 78.4 with oracle evidence.",
+    "models": [
+      {
+        "name": "Qwen3.6-35B-A3B",
+        "rows": [
+          {
+            "method": "No Context",
+            "explicit": 30.0,
+            "implicit": 25.7,
+            "gap": 4.2
+          },
+          {
+            "method": "Oracle Evidence",
+            "explicit": 85.0,
+            "implicit": 80.8,
+            "gap": 4.2,
+            "oracle": true
+          },
+          {
+            "method": "Full Memory",
+            "explicit": 76.9,
+            "implicit": 38.3,
+            "gap": 38.6
+          },
+          {
+            "method": "NaiveRAG",
+            "explicit": 72.2,
+            "implicit": 33.7,
+            "gap": 38.5
+          },
+          {
+            "method": "Generative Agents",
+            "explicit": 49.9,
+            "implicit": 29.5,
+            "gap": 20.4
+          },
+          {
+            "method": "Reflexion",
+            "explicit": 76.8,
+            "implicit": 38.3,
+            "gap": 38.5
+          },
+          {
+            "method": "MemGPT",
+            "explicit": 76.9,
+            "implicit": 38.5,
+            "gap": 38.4
+          },
+          {
+            "method": "A-Mem",
+            "explicit": 67.6,
+            "implicit": 32.2,
+            "gap": 35.4
+          },
+          {
+            "method": "MemoryOS",
+            "explicit": 32.3,
+            "implicit": 22.1,
+            "gap": 10.2
+          }
+        ]
+      },
+      {
+        "name": "GPT-5.4-mini",
+        "rows": [
+          {
+            "method": "No Context",
+            "explicit": 29.3,
+            "implicit": 27.7,
+            "gap": 1.6
+          },
+          {
+            "method": "Oracle Evidence",
+            "explicit": 83.4,
+            "implicit": 78.4,
+            "gap": 5.0,
+            "oracle": true
+          },
+          {
+            "method": "Full Memory",
+            "explicit": 72.4,
+            "implicit": 37.5,
+            "gap": 34.8
+          },
+          {
+            "method": "NaiveRAG",
+            "explicit": 70.4,
+            "implicit": 38.4,
+            "gap": 32.0
+          },
+          {
+            "method": "Generative Agents",
+            "explicit": 56.4,
+            "implicit": 37.2,
+            "gap": 19.2
+          },
+          {
+            "method": "Reflexion",
+            "explicit": 74.8,
+            "implicit": 41.9,
+            "gap": 32.8
+          },
+          {
+            "method": "MemGPT",
+            "explicit": 71.1,
+            "implicit": 38.1,
+            "gap": 33.0
+          },
+          {
+            "method": "A-Mem",
+            "explicit": 74.2,
+            "implicit": 41.6,
+            "gap": 32.6
+          },
+          {
+            "method": "MemoryOS",
+            "explicit": 34.9,
+            "implicit": 30.3,
+            "gap": 4.5
+          }
+        ]
+      }
+    ],
+    "humans": [
+      {
+        "method": "Human (Full)",
+        "explicit": 83.2,
+        "implicit": 82.8,
+        "gap": 0.4
+      },
+      {
+        "method": "Human (Oracle)",
+        "explicit": 90.8,
+        "implicit": 86.5,
+        "gap": 4.3
+      }
+    ]
+  },
+  "rq2": {
+    "title": "Cue-aware textualization",
+    "question": "How does textualization quality affect implicit memory?",
+    "headline": "Richer captions recover cues, but the gain is uneven and costly.",
+    "caption_quality": {
+      "image": {
+        "levels": [
+          "Brief",
+          "Medium",
+          "Detailed"
+        ],
+        "tasks": {
+          "Entity Recall": {
+            "explicit": [
+              56.4,
+              65.7,
+              71.0
+            ],
+            "implicit": [
+              10.3,
+              23.8,
+              47.2
+            ]
+          },
+          "Long Pattern": {
+            "explicit": [
+              66.4,
+              77.1,
+              77.6
+            ],
+            "implicit": [
+              29.1,
+              35.0,
+              42.1
+            ]
+          },
+          "Personalized Rec.": {
+            "explicit": [
+              65.6,
+              68.2,
+              71.9
+            ],
+            "implicit": [
+              41.2,
+              45.9,
+              50.0
+            ]
+          },
+          "Answer Refusal": {
+            "explicit": [
+              35.6,
+              34.2,
+              32.3
+            ],
+            "implicit": [
+              79.1,
+              73.4,
+              62.2
+            ]
+          }
+        }
+      },
+      "audio": {
+        "levels": [
+          "ASR",
+          "Hint",
+          "Split"
+        ],
+        "tasks": {
+          "Entity Recall": {
+            "explicit": [
+              71.8,
+              71.9,
+              70.8
+            ],
+            "implicit": [
+              null,
+              null,
+              null
+            ]
+          },
+          "Long Pattern": {
+            "explicit": [
+              70.7,
+              72.3,
+              71.7
+            ],
+            "implicit": [
+              33.0,
+              33.7,
+              50.6
+            ]
+          },
+          "Personalized Rec.": {
+            "explicit": [
+              68.2,
+              69.2,
+              69.1
+            ],
+            "implicit": [
+              47.1,
+              47.4,
+              51.4
+            ]
+          },
+          "Answer Refusal": {
+            "explicit": [
+              62.4,
+              60.5,
+              60.8
+            ],
+            "implicit": [
+              95.9,
+              96.5,
+              94.2
+            ]
+          }
+        }
+      }
+    },
+    "tradeoff": [
+      {
+        "label": "Medium → Detailed",
+        "tokens": [
+          1.9,
+          7.0
+        ],
+        "implicit": [
+          53.3,
+          62.2
+        ],
+        "explicit": [
+          70.9,
+          72.4
+        ]
+      }
+    ],
+    "summary": [
+      "Image implicit Memory Avg.: 26.9 → 46.4",
+      "Audio implicit Memory Avg.: 40.1 → 51.0",
+      "Detailed captions: 1.9k → 7.0k retrieved tokens / QA"
+    ]
+  },
+  "rq3": {
+    "title": "Native multimodal access",
+    "question": "Can native multimodal access alleviate the textualization bottleneck?",
+    "headline": "Native evidence helps selectively; multimodal indexing adds retrieval noise.",
+    "systems": [
+      {
+        "name": "Qwen3-Omni-30B-A3B-Instruct",
+        "rows": [
+          {
+            "index": "Oracle",
+            "use": "Text",
+            "explicit": 82.1,
+            "implicit": 81.5,
+            "gap": 0.6,
+            "oracle": true
+          },
+          {
+            "index": "Oracle",
+            "use": "Multimodal",
+            "explicit": 87.0,
+            "implicit": 65.8,
+            "gap": 21.1,
+            "oracle": true
+          },
+          {
+            "index": "Text",
+            "use": "Text",
+            "explicit": 73.2,
+            "implicit": 49.2,
+            "gap": 24.0
+          },
+          {
+            "index": "Text",
+            "use": "Multimodal",
+            "explicit": 79.3,
+            "implicit": 51.4,
+            "gap": 27.8
+          },
+          {
+            "index": "Multimodal",
+            "use": "Text",
+            "explicit": 69.3,
+            "implicit": 43.7,
+            "gap": 25.6
+          },
+          {
+            "index": "Multimodal",
+            "use": "Multimodal",
+            "explicit": 77.8,
+            "implicit": 51.1,
+            "gap": 26.7
+          }
+        ]
+      },
+      {
+        "name": "MiniCPM-o-4.5",
+        "rows": [
+          {
+            "index": "Oracle",
+            "use": "Text",
+            "explicit": 82.6,
+            "implicit": 77.9,
+            "gap": 4.7,
+            "oracle": true
+          },
+          {
+            "index": "Oracle",
+            "use": "Multimodal",
+            "explicit": 58.0,
+            "implicit": 43.9,
+            "gap": 14.1,
+            "oracle": true
+          },
+          {
+            "index": "Text",
+            "use": "Text",
+            "explicit": 70.6,
+            "implicit": 46.2,
+            "gap": 24.4
+          },
+          {
+            "index": "Text",
+            "use": "Multimodal",
+            "explicit": 54.6,
+            "implicit": 37.8,
+            "gap": 16.8
+          },
+          {
+            "index": "Multimodal",
+            "use": "Text",
+            "explicit": 68.3,
+            "implicit": 42.8,
+            "gap": 25.5
+          },
+          {
+            "index": "Multimodal",
+            "use": "Multimodal",
+            "explicit": 53.4,
+            "implicit": 37.7,
+            "gap": 15.7
+          }
+        ]
+      }
+    ],
+    "retrieval": {
+      "k": [
+        1,
+        3,
+        5,
+        10,
+        25
+      ],
+      "explicit": {
+        "Text-Index": {
+          "recall": [
+            6.6,
+            17.1,
+            25.2,
+            39.2,
+            61.7
+          ],
+          "precision": [
+            60.8,
+            55.8,
+            52.5,
+            45.3,
+            33.0
+          ]
+        },
+        "MM-Index": {
+          "recall": [
+            8.0,
+            20.0,
+            27.1,
+            37.3,
+            52.9
+          ],
+          "precision": [
+            62.5,
+            54.9,
+            47.1,
+            34.7,
+            22.8
+          ]
+        }
+      },
+      "implicit": {
+        "Text-Index": {
+          "recall": [
+            1.8,
+            4.7,
+            7.1,
+            12.5,
+            23.1
+          ],
+          "precision": [
+            21.3,
+            19.6,
+            18.2,
+            16.2,
+            12.4
+          ]
+        },
+        "MM-Index": {
+          "recall": [
+            3.9,
+            7.9,
+            11.3,
+            17.7,
+            29.7
+          ],
+          "precision": [
+            17.2,
+            12.2,
+            10.8,
+            8.6,
+            6.1
+          ]
+        }
+      }
+    }
+  }
+}

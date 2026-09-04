@@ -1,0 +1,149 @@
+{
+  "id": "image",
+  "kind": "image",
+  "title": "从偏好到视觉事件",
+  "subtitle": "Pixel × 窗台多肉：一个历史图片 turn 的合成链路",
+  "description": "这个 case 展示隐式视觉偏好、显式宠物实体、事件文本和最终历史图像如何逐步汇合。",
+  "badge": "CASE 01 · IMAGE",
+  "steps": [
+    {
+      "number": "01",
+      "eyebrow": "PROFILE / IMPLICIT PREFERENCE",
+      "title": "先从历史线索中提取隐式偏好",
+      "intro": "视觉证据没有直接说出“喜欢绿植”，但窗台边缘的微小线索被整理成可生成的偏好。",
+      "facts": [
+        {
+          "label": "人物",
+          "value": "林悦"
+        },
+        {
+          "label": "偏好类别",
+          "value": "植物与绿植"
+        },
+        {
+          "label": "preference",
+          "value": "喜欢在窗台种植多肉等小型绿植"
+        },
+        {
+          "label": "evidence",
+          "value": [
+            "visual"
+          ]
+        },
+        {
+          "label": "entity anchors",
+          "value": [
+            "粉蓝色多肉植物白色陶瓷小圆盆",
+            "原木色窗台多肉植物收纳托盘"
+          ]
+        }
+      ],
+      "flow_label": "profile → entity anchor candidates",
+      "theme": "mint"
+    },
+    {
+      "number": "02",
+      "eyebrow": "PROFILE → ENTITY PORTRAITS",
+      "title": "为视觉实体生成可复用的定妆照",
+      "intro": "两个 entity anchor 被分别渲染成稳定的视觉参考，供后续事件生成保持外观一致。",
+      "facts": [
+        {
+          "label": "用途",
+          "value": "为事件图像提供局部、可控的实体参考"
+        }
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "url": "/media/profile/generated_portraits/profile_0_%E6%9E%97%E6%82%A6_Items_%E7%B2%89%E8%93%9D%E8%89%B2%E5%A4%9A%E8%82%89%E6%A4%8D%E7%89%A9%E7%99%BD%E8%89%B2%E9%99%B6%E7%93%B7%E5%B0%8F%E5%9C%86%E7%9B%86_4.png",
+          "label": "Entity anchor 01",
+          "caption": "粉蓝色多肉植物白色陶瓷小圆盆"
+        },
+        {
+          "kind": "image",
+          "url": "/media/profile/generated_portraits/profile_0_%E6%9E%97%E6%82%A6_Items_%E5%8E%9F%E6%9C%A8%E8%89%B2%E7%AA%97%E5%8F%B0%E5%A4%9A%E8%82%89%E6%A4%8D%E7%89%A9%E6%94%B6%E7%BA%B3%E6%89%98%E7%9B%98_5.png",
+          "label": "Entity anchor 02",
+          "caption": "原木色窗台多肉植物收纳托盘"
+        }
+      ],
+      "flow_label": "2 entity anchors → 2 reference portraits",
+      "theme": "lavender"
+    },
+    {
+      "number": "03",
+      "eyebrow": "PROFILE / EXPLICIT ENTITY",
+      "title": "同时保留明确表达的宠物实体",
+      "intro": "explicit preference 直接给出 Pixel 的身份、品种、性格和外观，形成另一张定妆照。",
+      "facts": [
+        {
+          "label": "name",
+          "value": "Pixel"
+        },
+        {
+          "label": "info",
+          "value": "猫;美短混血;4岁;活泼机敏，擅长攀爬高处，对移动光标有强烈反应"
+        },
+        {
+          "label": "appearance",
+          "value": "银灰虎斑纹，白色胸脯和爪子，左耳有微型缺口，眼睛为橄榄绿色，体格精瘦肌肉分明"
+        },
+        {
+          "label": "expression_type",
+          "value": "explicit"
+        }
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "url": "/media/profile/generated_portraits/profile_0_%E6%9E%97%E6%82%A6_Pets_pixel_0.png",
+          "label": "Pet anchor",
+          "caption": "Pixel 的宠物定妆照"
+        }
+      ],
+      "flow_label": "explicit pet preference → pet portrait",
+      "theme": "peach"
+    },
+    {
+      "number": "04",
+      "eyebrow": "PREFERENCE PAIRING → EVENT",
+      "title": "把 explicit 与 implicit preference 配对成 event",
+      "intro": "配对策略让 Pixel 成为主场景主体，同时把绿植只作为远处、不可接触的背景线索。",
+      "facts": [
+        {
+          "label": "explicit preference",
+          "value": "Pixel · 银灰虎斑纹，白色胸脯和爪子，左耳有微型缺口，眼睛为橄榄绿色，体格精瘦肌肉分明"
+        },
+        {
+          "label": "implicit preference",
+          "value": "喜欢在窗台种植多肉等小型绿植"
+        }
+      ],
+      "quote": "01/03/2025;林悦家客厅;周五下午三点多,阳光穿过百叶窗在地板上切出一排斜长的光带。林悦盘腿坐在沙发前的地毯上,手里端着马克杯,看Pixel在客厅中央追着一颗浅灰色羊毛球满地跑。那颗球是从她织了一半的围巾上拆下来的线头揉成的,在地板上弹跳滚动,银灰虎斑…",
+      "quote_label": "文字版 event / scene_description",
+      "flow_label": "explicit + implicit → structured event",
+      "theme": "blue"
+    },
+    {
+      "number": "05",
+      "eyebrow": "EVENT → FINAL IMAGE",
+      "title": "用 event 与三张定妆照合成历史图像",
+      "intro": "最终图像同时保留 Pixel 的显式特征，以及右侧窗台若隐若现的多肉视觉线索。",
+      "facts": [
+        {
+          "label": "user_shared_image_description",
+          "value": "第一人称视觉下的客厅里，画面中心是银灰虎斑猫Pixel前爪拨弄毛线团，左耳小缺口清晰，橄榄绿眼睛紧盯猎物。午后阳光斜切过地板，画面角落里，右侧窗台边缘隐约露出一点粉蓝色多肉叶片和原木色托盘一角。"
+        }
+      ],
+      "media": [
+        {
+          "kind": "image",
+          "url": "/media/event/images/pid_0000_task_0-0-0.png",
+          "label": "Final event image",
+          "caption": "Image #1 / Image #2：由文字 event 与三张定妆照合成的历史事件图像"
+        }
+      ],
+      "flow_label": "event text + 3 portraits → event image",
+      "theme": "coral"
+    }
+  ]
+}

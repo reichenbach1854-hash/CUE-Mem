@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="CUE-Mem benchmark data construction pipeline demo"
+    />
+    <title>CUE-Mem · Benchmark Data Construction</title>
+    <link rel="stylesheet" href="./static/style.css?v=github-pages-1" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="hero">
+        <nav class="topbar" aria-label="主导航">
+          <a class="brand" href="/">
+            <span class="brand-mark">C</span>
+            <span>
+              <strong>CUE-Mem</strong>
+              <small>BENCHMARK LAB</small>
+            </span>
+          </a>
+          <button id="language-toggle" class="language-toggle" type="button" aria-label="切换语言">EN</button>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="benchmarkEyebrow">MULTIMODAL MEMORY BENCHMARK</p>
+            <h1>CUE-Mem</h1>
+            <p class="benchmark-intro" data-i18n="benchmarkIntro">
+              现有长期记忆评测多数只关注文本或显式多模态信息，对用户消息中反复出现的隐式线索关注不足：<br />
+              <span class="benchmark-intro-list">1、图片背景、边缘<br />2、语音消息的背景音</span><br />
+              本研究构建 CUE-Mem Benchmark，旨在评估多模态智能体从隐式线索中检索并应用长期用户记忆的能力。
+            </p>
+            <div class="benchmark-stats" aria-label="Benchmark statistics">
+              <div class="benchmark-stat"><strong>20</strong><span data-i18n="users">users</span></div>
+              <div class="benchmark-stat"><strong>2,674</strong><span data-i18n="qaPairs">QA pairs</span></div>
+              <div class="benchmark-stat"><strong>648</strong><span data-i18n="sessions">sessions</span></div>
+              <div class="benchmark-stat"><strong>5,798</strong><span data-i18n="dialogueTurns">dialogue turns</span></div>
+              <div class="benchmark-stat"><strong>496</strong><span data-i18n="images">images</span></div>
+              <div class="benchmark-stat"><strong>2,228</strong><span data-i18n="audioClips">audio clips</span></div>
+            </div>
+            <div class="resource-links" aria-label="Project resources">
+              <span class="resource-link is-placeholder" data-i18n="paperSoon">Paper · coming soon</span>
+              <a class="resource-link" href="https://github.com/reichenbach1854-hash/CUE-Mem" target="_blank" rel="noopener">GitHub ↗</a>
+              <a class="resource-link" href="https://huggingface.co/datasets/Kkryptonite/CUE-Mem" target="_blank" rel="noopener">Hugging Face ↗</a>
+            </div>
+            <div class="page-nav" id="page-nav" role="navigation" aria-label="Demo sections">
+              <a href="#construction" data-page="construction" data-i18n="navConstruction">01 · Data construction</a>
+              <a href="#qa" data-page="qa" data-i18n="navQa">02 · QA cases</a>
+              <a href="#results" data-page="results" data-i18n="navResults">03 · Results</a>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <main>
+        <div class="demo-page" data-page-view="construction">
+        <section class="intro-section">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="dataConstruction">DATA CONSTRUCTION</p>
+            <h2 data-i18n="constructionTitle">Benchmark data<br /><span>construction process</span></h2>
+          </div>
+          <div class="hero-pipeline" aria-label="Construction stages">
+            <div class="pipeline-node"><span>01</span><strong>Profile</strong><small>preferences</small></div>
+            <span class="pipeline-arrow" aria-hidden="true">→</span>
+            <div class="pipeline-node"><span>02</span><strong>Entity</strong><small>references</small></div>
+            <span class="pipeline-arrow" aria-hidden="true">→</span>
+            <div class="pipeline-node"><span>03</span><strong>Event</strong><small>annotations</small></div>
+            <span class="pipeline-arrow" aria-hidden="true">→</span>
+            <div class="pipeline-node"><span>04</span><strong>Artifact</strong><small>history</small></div>
+          </div>
+          <p class="section-description">
+            <span data-i18n="constructionDescription">Two representative cases illustrate how profile-level preferences are transformed into structured events and multimodal history.<br />Select a case, then use the step controls to reveal the construction sequence.</span>
+          </p>
+        </section>
+
+        <section class="case-switcher" aria-label="构造案例">
+          <div id="case-tabs" class="case-tabs" role="tablist"></div>
+          <div id="case-summary" class="case-summary"></div>
+        </section>
+
+        <section class="flow-panel" aria-live="polite">
+          <div class="flow-toolbar">
+            <div>
+              <p class="eyebrow">LIVE PIPELINE</p>
+              <h2 id="flow-title">Loading case…</h2>
+            </div>
+            <div class="flow-actions">
+              <button id="play-button" class="button button-primary" type="button">
+                <span class="button-icon">▶</span> <span data-i18n="playFlow">播放构造流程</span>
+              </button>
+              <button id="next-button" class="button button-ghost" type="button">
+                <span data-i18n="nextStep">下一步</span> <span class="button-icon">→</span>
+              </button>
+              <button id="reset-button" class="button button-quiet" type="button">
+                <span data-i18n="reset">重置</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="progress-row">
+            <div class="progress-track"><span id="progress-bar"></span></div>
+            <span id="progress-label">准备播放</span>
+          </div>
+
+          <div id="flow-canvas" class="flow-canvas">
+            <div class="loading-state" data-i18n="caseLoading">正在读取构造案例…</div>
+          </div>
+        </section>
+        </div>
+
+        <div class="demo-page" data-page-view="qa">
+        <section class="qa-section" aria-labelledby="qa-section-title">
+          <div class="qa-section-heading">
+            <div>
+              <p class="eyebrow" data-i18n="qaExamples">QA EXAMPLES</p>
+              <h2 id="qa-section-title" data-i18n="qaTitle">Four evaluation settings</h2>
+            </div>
+            <p>
+              <span data-i18n="qaDescription">Each example presents the question and retrieved memory clues first.
+              Expand the answer panel to reveal the gold answer and the preference
+              being evaluated.</span>
+            </p>
+          </div>
+          <div id="qa-grid" class="qa-grid">
+            <div class="loading-state" data-i18n="qaLoading">正在读取 QA 案例…</div>
+          </div>
+        </section>
+        </div>
+
+        <div class="demo-page" data-page-view="results">
+        <section class="results-section" aria-labelledby="results-section-title">
+          <div class="results-heading">
+            <div>
+              <p class="eyebrow" data-i18n="experimentalResults">EXPERIMENTAL RESULTS · DEMO V3</p>
+              <h2 id="results-section-title" data-i18n="resultsTitle">Three research questions</h2>
+            </div>
+          </div>
+          <div id="results-tabs" class="results-tabs" role="tablist" aria-label="Research questions"></div>
+          <div id="results-panel" class="results-panel" aria-live="polite">
+            <div class="loading-state" data-i18n="resultLoading">正在读取实验结果…</div>
+          </div>
+        </section>
+
+        <section class="method-note">
+          <div class="note-index">NOTE</div>
+          <div>
+            <p class="eyebrow">SCOPE OF THIS DEMO</p>
+            <p>
+              This section presents the benchmark's <strong>data construction process</strong>
+              followed by four representative QA settings. The answer panels stay
+              collapsed so the memory evidence can be inspected before the gold answer.
+            </p>
+          </div>
+        </section>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <span>CUE-Mem Benchmark</span>
+        <span>Local research demo · no external API required</span>
+      </footer>
+    </div>
+
+    <script src="./static/app.js?v=github-pages-1" defer></script>
+  </body>
+</html>
